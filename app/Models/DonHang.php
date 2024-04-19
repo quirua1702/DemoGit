@@ -18,4 +18,15 @@ public function DonHang_ChiTiet(): HasMany
     {
         return $this->hasMany(DonHang_ChiTiet::class, 'donhang_id', 'id');
     }
+    public function scopeSearch($query){
+        if($key = request()->key){
+            $query = $query->where('dienthoai','like','%'.$key.'%');
+            
+        }
+        return $query;
+    }
+public function cus(){
+    return $this->hasOne(NguoiDung::class,'id','nguoidung_id');
+}
+  
 }

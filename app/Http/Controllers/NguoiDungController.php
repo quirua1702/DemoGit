@@ -14,6 +14,8 @@ class NguoiDungController extends Controller
         $this->middleware('auth');
     }
     */
+
+
     public function getDanhSach()
     {
         $nguoidung = NguoiDung::all();

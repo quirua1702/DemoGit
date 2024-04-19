@@ -9,8 +9,8 @@ public function DonHang(): BelongsTo
 {
 return $this->belongsTo(DonHang::class, 'donhang_id', 'id');
 }
-public function SanPham(): BelongsTo
+public function GoiData(): BelongsTo
 {
-return $this->belongsTo(SanPham::class, 'sanpham_id', 'id');
+return $this->belongsTo(GoiData::class, 'goidata_id', 'id');
 }
 }

@@ -20,7 +20,7 @@
 				</nav>
 				</div>
 				<div class="order-lg-1 pe-lg-4 text-center text-lg-start">
-				<h1 class="h3 text-light mb-0">Thanh toán</h1>
+				<h1 class="h3 text-light mb-0">THANH TOÁN</h1>
 			</div>
 		</div>
 	</div>
@@ -45,7 +45,7 @@
 		<div class="step-label"><i class="ci-check-circle"></i>Hoàn tất</div>
 		</a>
 		</div>
-	<h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Thông tin giao hàng</h2>
+	<h2 class="h6 pt-1 pb-3 mb-3 border-bottom">THÔNG TIN KHÁCH HÀNG</h2>
 	<form method="post" action="{{ route('user.dathang') }}" class="needs-validation" novalidate>
 @csrf
 
@@ -57,21 +57,12 @@
 
 <div class="mb-3">
 
-<label class="form-label" for="dienthoaigiaohang">Điện thoại giao hàng</label>
-<input class="form-control @error('dienthoaigiaohang') is-invalid @enderror" type="text" id="dienthoaigiaohang" name="dienthoaigiaohang" required />
-@error('dienthoaigiaohang')
+<label class="form-label" for="dienthoai">Điện thoại</label>
+<input class="form-control @error('dienthoai') is-invalid @enderror" type="text" id="dienthoai" name="dienthoai" required />
+@error('dienthoai')
 <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
 @enderror
-</div>
 
-<div class="mb-3">
-
-<label class="form-label" for="diachigiaohang">Địa chỉ giao hàng</label>
-<input class="form-control @error('diachigiaohang') is-invalid @enderror" type="text" id="diachigiaohang" name="diachigiaohang" required />
-@error('diachigiaohang')
-<div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-@enderror
-</div>
 
 <h6 class="mb-3 py-3 border-bottom">Thông tin xuất hóa đơn</h6>
 
@@ -132,19 +123,6 @@
 <span class="me-2">Tổng tiền sản phẩm:</span><span class="text-end">{{ Cart::priceTotal() }}<small>đ</small></span>
 </li>
 
-<li class="d-flex justify-content-between align-items-center">
-
-<span class="me-2">Phí vận chuyển:</span><span class="text-end">—</span>
-</li>
-
-<li class="d-flex justify-content-between align-items-center">
-
-<span class="me-2">Thuế GTGT:</span><span class="text-end">{{ Cart::tax() }}</span>
-</li>
-
-<li class="d-flex justify-content-between align-items-center">
-<span class="me-2">Giảm giá:</span><span class="text-end">—</span>
-</li>
 </ul>
 
 <h3 class="fw-normal text-center my-4">{{ Cart::total() }}<small>đ</small></h3>

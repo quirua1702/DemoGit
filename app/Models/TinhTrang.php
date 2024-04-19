@@ -9,4 +9,10 @@ public function DonHang(): HasMany
 {
 return $this->hasMany(DonHang::class, 'tinhtrang_id', 'id');
 }
+public function scopeSearch($query){
+    if($key = request()->key){
+        $query = $query->where('tinhtrang','like','%'.$key.'%');
+    }
+    return $query;
+}
 }

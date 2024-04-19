@@ -15,8 +15,8 @@ return new class extends Migration
 		$table->id();
         $table->foreignId('nguoidung_id')->constrained('nguoidung');
 		$table->foreignId('tinhtrang_id')->constrained('tinhtrang');
-		$table->string('dienthoaigiaohang', 20);
-		$table->string('diachigiaohang');
+		$table->string('dienthoai', 20);
+		//$table->string('diachigiaohang');
 		$table->timestamps();
 		$table->engine = 'InnoDB';
 		});

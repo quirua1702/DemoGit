@@ -31,9 +31,7 @@
 <div class="bg-white rounded-3 shadow-lg pt-1 mb-5 mb-lg-0">
 <div class="d-md-flex justify-content-between align-items-center text-center text-md-start p-4">
 <div class="d-md-flex align-items-center">
-<div class="img-thumbnail rounded-circle position-relative flex-shrink-0 mx-auto mb-2 mx-md-0 mb-md-0" style="width:6.375rem;">
-<img class="rounded-circle" src="{{ asset('public/img/avatar.jpg') }}" />
-</div>
+
 
 <div class="ps-md-3">
 
@@ -70,45 +68,10 @@
 @endif
 
 <li class="border-bottom mb-0">
-
-<a class="nav-link-style d-flex align-items-center px-4 py-3" href="#">
-<i class="ci-heart opacity-60 me-2"></i>Sản phẩm yêu thích<span class="fs-sm text-muted ms-auto">0</span>
-</a>
 </li>
-
 <li class="mb-0">
-
-<a class="nav-link-style d-flex align-items-center px-4 py-3" href="#">
-<i class="ci-star opacity-60 me-2"></i>Đánh giá sản phẩm<span class="fs-sm text-muted ms-auto">0</span>
-</a>
 </li>
 </ul>
-
-<div class="bg-secondary px-4 py-3">
-
-<h3 class="fs-sm mb-0 text-muted">Thiết lập tài khoản</h3>
-</div>
-
-<ul class="list-unstyled mb-0">
-<li class="border-bottom mb-0">
-<a class="nav-link-style d-flex align-items-center px-4 py-3 active" href="{{ route('user.hosocanhan') }}">
-<i class="ci-user opacity-60 me-2"></i>Hồ sơ cá nhân
-</a>
-</li>
-
-<li class="border-bottom mb-0">
-
-<a class="nav-link-style d-flex align-items-center px-4 py-3" href="#">
-<i class="ci-location opacity-60 me-2"></i>Sổ địa chỉ
-</a>
-</li>
-
-<li class="mb-0">
-
-<a class="nav-link-style d-flex align-items-center px-4 py-3" href="#">
-<i class="ci-card opacity-60 me-2"></i>Phương thức thanh toán
-</a>
-</li>
 
 <li class="d-lg-none border-top mb-0">
 
@@ -150,16 +113,14 @@
 @csrf
 
 <div class="bg-secondary rounded-3 p-4 mb-4">
-<div class="d-flex align-items-center">
-<img class="rounded" src="{{ asset('public/img/avatar.jpg') }}" width="90" />
-<div class="ps-3">
-<button class="btn btn-light btn-shadow btn-sm mb-2" type="button">
-<i class="ci-loading me-2"></i>Đổi ảnh đại diện
-</button>
+    <div class="d-flex align-items-center">
 
-<div class="p mb-0 fs-ms text-muted">Tải lên hình ảnh JPG, GIF hoặc PNG. Yêu cầu kích thước 300x300.</div>
+           
 
-</div>
+
+
+
+
 </div>
 </div>
 

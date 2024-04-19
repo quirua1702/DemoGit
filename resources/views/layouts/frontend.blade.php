@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -20,8 +18,8 @@
     
     <!-- Favicon and Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('public/img/apple-touch-icon.png') }}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/img/favicon-32x32.png') }}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/img/favicon-16x16.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('public/img/logo2.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('public/img/logo2.png') }}" />
     
     <!-- CSS -->
     <link rel="stylesheet" media="screen" href="{{ asset('public/vendor/simplebar/simplebar.min.css') }}" />
@@ -38,20 +36,22 @@
                 <div class="navbar navbar-expand-lg navbar-light">
                     <div class="container">
                         <a class="navbar-brand d-none d-sm-block flex-shrink-0" href="{{ route('frontend.home') }}">
-                            <img src="{{ asset('public/img/logo-dark.png') }}" width="142" />
+                            <img src="{{ asset('public/img/logo2.png') }}" width="142" />
                         </a>
                         <a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="{{ route('frontend.home') }}">
                             <img src="{{ asset('public/img/logo-icon.png') }}" width="74" />
                         </a>
-                        <div class="input-group d-none d-lg-flex mx-4">
-                            <input class="form-control rounded-end pe-5" type="text" placeholder="Tìm kiếm" />
+                        <form  method="get" action="{{route('frontend.search')}}">
+                        <div class="input-group d-none d-lg-flex mx-4" >
+                            <input class="form-control rounded-end pe-5" type="text" name="key" placeholder="Tìm kiếm" />
                             <i class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-3"></i>
                         </div>
+                        </form> 
                         <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                            <a class="navbar-tool navbar-stuck-toggler" href="#menu">
+                            <a class="navbar-tool navbar-stuck-toggler" href="{{ route('frontend.home') }}">
                                 <span class="navbar-tool-tooltip">Mở rộng menu</span>
                                 <div class="navbar-tool-icon-box"><i class="navbar-tool-icon ci-menu"></i></div>
                             </a> 
@@ -90,12 +90,10 @@
                                 </li>
                             </ul>
                             <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="{{ route('frontend.sanpham') }}" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="ci-gift me-2"></i>Sản phẩm</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="{{ route('frontend.sanpham.phanloai', ['tenloai_slug' => 'op-lung']) }}">Ốp lưng</a></li>
-                                        <li><a class="dropdown-item" href="{{ route('frontend.sanpham.phanloai', ['tenloai_slug' => 'sac-du-phong']) }}">Sạc dự phòng</a></li>
-                                    </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link ps-lg-0" href="{{ route('frontend.goidata') }}">
+                                        <i class="ci-gift me-2"></i>Gói data
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('frontend.baiviet') }}"><i class="ci-globe me-2"></i>Tin tức</a>
@@ -122,15 +120,15 @@
                 <div class="row pb-2">
                     <div class="col-md-6 text-center text-md-start mb-4">
                         <div class="text-nowrap mb-4">
-                            <a class="d-inline-block align-middle mt-n1 me-3" href="{{ route('frontend.home') }}"><img class="d-block" src="{{ asset('public/img/footer-logo-light.png') }}" width="117" /></a>
+                            <a class="d-inline-block align-middle mt-n1 me-3" href="{{ route('frontend.home') }}"><img class="d-block" src="{{ asset('public/img/logo2.png') }}" width="117" /></a>
                         </div>
                         <div class="widget widget-links widget-light">
                             <ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
-                                <li class="widget-list-item me-4"><a class="widget-list-link" href="{{ route('frontend.home') }}">Trang chủ</a></li>
-                                <li class="widget-list-item me-4"><a class="widget-list-link" href="{{ route('frontend.sanpham') }}">Sản phẩm</a></li>
-                                <li class="widget-list-item me-4"><a class="widget-list-link" href="{{ route('frontend.baiviet') }}">Tin tức</a></li>
-                                <li class="widget-list-item me-4"><a class="widget-list-link" href="{{ route('frontend.tuyendung') }}">Tuyển dụng</a></li>
-                                <li class="widget-list-item me-4"><a class="widget-list-link" href="{{ route('frontend.lienhe') }}">Liên hệ</a></li>
+                                <li class="widget-list-item me-5"><a class="widget-list-link" href="{{ route('frontend.home') }}">Trang chủ</a></li>
+                                <li class="widget-list-item me-5"><a class="widget-list-link" href="{{ route('frontend.goidata') }}">Gói cước</a></li>
+                                <li class="widget-list-item me-5"><a class="widget-list-link" href="{{ route('frontend.baiviet') }}">Tin tức</a></li>
+                                <li class="widget-list-item me-5"><a class="widget-list-link" href="{{ route('frontend.tuyendung') }}">Tuyển dụng</a></li>
+                                <li class="widget-list-item me-5"><a class="widget-list-link" href="{{ route('frontend.lienhe') }}">Liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -153,6 +151,7 @@
         <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
         <i class="btn-scroll-top-icon ci-arrow-up"></i>
     </a>
+    
     <script src="{{ asset('public/vendor/bootstrap/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('public/vendor/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('public/vendor/tiny-slider/tiny-slider.js') }}"></script>

@@ -27,6 +27,10 @@ class NguoiDung extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function donhang_list(){
+        return $this->hasMany(NguoiDung::class,'nguoidung_id','id');
+    }
+ 
     public function DonHang(): HasMany
     {
         return $this->hasMany(DonHang::class, 'nguoidung_id', 'id');

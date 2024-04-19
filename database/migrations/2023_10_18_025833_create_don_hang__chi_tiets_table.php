@@ -14,7 +14,7 @@ return new class extends Migration
 		Schema::create('donhang_chitiet', function (Blueprint $table) {
 		$table->id();
 		$table->foreignId('donhang_id')->constrained('donhang');
-		$table->foreignId('sanpham_id')->constrained('sanpham');
+		$table->foreignId('goidata_id')->constrained('goidata');
 		$table->integer('soluongban');
 		$table->double('dongiaban');
 		$table->timestamps();

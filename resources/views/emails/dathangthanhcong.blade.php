@@ -16,16 +16,15 @@
 </head>
     <body>
         <p>Xin chào {{ Auth::user()->name }}!</p>
-        <p>Xin cảm ơn bạn đã đặt hàng tại {{ config('app.name', 'Laravel') }}.</p>
-        <p>Thông tin giao hàng:</p>
-        <p>- Điện thoại: <strong>{{ $donhang->dienthoaigiaohang }}</strong></p>
-        <p>- Địa chỉ giao: <strong>{{ $donhang->diachigiaohang }}</strong></p>
+        <p>Xin cảm ơn bạn đã đặt hàng tại {{ config('app.name', 'Mobifone') }}.</p>
+        <p>Mã đơn hàng: {{rand(10000,999)}}</p>
+        <p>- Điện thoại: <strong>{{ $donhang->dienthoai }}</strong></p>
         <p>Thông tin đơn hàng bao gồm:</p>
         <table border="1">
     <thead>
         <tr>
             <th width="5%">#</th>
-            <th>Sản phẩm</th>
+            <th with="55%">Gói data</th>
             <th width="5%">SL</th>
             <th width="15%">Đơn giá</th>
             <th width="20%">Thành tiền</th>
@@ -36,10 +35,10 @@
         @foreach($donhang->DonHang_ChiTiet as $chitiet)
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $chitiet->SanPham->tensanpham }}</td>
+                <td>{{ $chitiet->GoiData->tengoicuoc }}</td>
                 <td>{{ $chitiet->soluongban }}</td>
                 <td style="text-align:right">
-                {{ number_format($chitiet->dongiaban) }}<sup><u>đ</u></sup>
+                {{ number_format($chitiet->dongiaban) }}<sup><u>đồng</u></sup>
                 </td>
 
                 <td style="text-align:right">
@@ -58,6 +57,6 @@
     </tbody>
     </table>
     <p>Trân trọng,</p>
-    <p>{{ config('app.name', 'Laravel') }}</p>
+    <p>{{ config('app.name', 'Mobifone') }}</p>
     </body>
 </html>

@@ -14,14 +14,12 @@ return new class extends Migration
         Schema::create('baiviet', function (Blueprint $table) {
             $table->id();
             $table->foreignId('chude_id')->constrained('chude');
-            $table->foreignId('nguoidung_id')->constrained('nguoidung');
+            //$table->foreignId('nguoidung_id')->constrained('nguoidung');
             $table->text('tieude');
             $table->text('tieude_slug');
             $table->text('tomtat')->nullable();
             $table->text('noidung');
-            $table->unsignedInteger('luotxem')->default(0);
-            $table->unsignedTinyInteger('kiemduyet')->default(1);
-            $table->unsignedTinyInteger('kichhoat')->default(1);
+            $table->string('hinh')->nullable();
             $table->timestamps();
             $table->engine = 'InnoDB';
             });
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('baiviet');
+        Schema::dropIfExists('baiviets');
     }
 };

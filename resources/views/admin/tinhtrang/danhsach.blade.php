@@ -8,9 +8,8 @@
             <table class="table table-bordered table-hover table-sm mb-0">
                 <thead>
                     <tr>
-                        <th width="5%">#</th>
-                        <th width="85%">Tên tình trạng</th>
-            
+                        <th class="text-center" width="5%">#</th>
+                        <th class="text-center" width="85%">Tên tình trạng</th>
                         <th width="5%">Sửa</th>
                         <th width="5%">Xóa</th>
                     </tr>
@@ -18,11 +17,10 @@
                 <tbody>
                     @foreach($tinhtrang as $value)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $value->tinhtrang }}</td>
-                      
-                            <td class="text-center"><a href="{{ route('admin.tinhtrang.sua', ['id' => $value->id]) }}"><i class="bi bi-pencil-square"></i></a></td>
-                            <td class="text-center"><a href="{{ route('admin.tinhtrang.xoa', ['id' => $value->id]) }}" onclick="return confirm('Bạn có muốn xóa tình trạng {{ $value->tinhtrang }}  không ?')"  ><i class="bi bi-trash text-danger"></i></a></td>
+                            <td class="text-center">{{ $loop->iteration }}</td>
+                            <td class="text-center">{{ $value->tinhtrang }}</td>
+                            <td class="text-center"><a href="{{ route('admin.tinhtrang.sua', ['id' => $value->id]) }}"><i class="bi bi-pencil-square"></i>sửa</a></td>
+                            <td class="text-center"><a href="{{ route('admin.tinhtrang.xoa', ['id' => $value->id]) }}"><i class="bi bi-trash text-danger"></i>xóa</a></td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -9,24 +9,18 @@
 
                 <div class="mb-3">
                     <label class="form-label" for="user_id">Khách hàng</label>
-                    <input type="text" class="form-control" id="user" name="user_id" value="{{ $donhang->User->name }}" disabled required />
+                    <input type="text" class="form-control" id="user" name="user_id" value="{{ $donhang->nguoidung->name}}" disabled required />
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" for="dienthoai">Điện thoại giao hàng</label>
-                    <input type="text" class="form-control @error('dienthoai') is-invalid @enderror" id="dienthoai" name="dienthoai" value="{{ $donhang->dienthoaigiaohang }}" required />
+                    <label class="form-label" for="dienthoai">Điện thoại</label>
+                    <input type="text" class="form-control @error('dienthoai') is-invalid @enderror" id="dienthoai" name="dienthoai" value="{{ $donhang->dienthoai}}" required />
                     @error('dienthoai')
                         <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
                     @enderror
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label" for="diachi">Địa chỉ giao hàng</label>
-                    <input type="text" class="form-control @error('diachi') is-invalid @enderror" id="diachi" name="diachi" value="{{ $donhang->diachigiaohang }}" required />
-                    @error('diachi')
-                        <div class="invalid-feedback"><strong>{{ $message }}</strong></div>
-                    @enderror
-                </div>
+               
 
                 <div class="mb-3">
                     <label class="form-label" for="tinhtrang_id">Tình trạng đơn hàng</label>

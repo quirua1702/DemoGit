@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="card">
-        <div class="card-header">Đơn hàng</div>
+        </div>
         <div class="card-body table-responsive">
             <p>
-                <a href="{{ route('admin.donhang.them') }}" class="btn btn-info"><i class="bi bi-plus"></i> Thêm mới</a>
-            </p>
+                </p>
             <table class="table table-bordered table-hover table-sm mb-0">
                 <thead>
                     <tr>
@@ -25,26 +23,26 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $value->NguoiDung->name }}</td>
                             <td>
-                                <span class="d-block">Điện thoại: <strong>{{ $value->dienthoaigiaohang }}</strong></span>
-                                <span class="d-block">Địa chỉ giao: <strong>{{ $value->diachigiaohang }}</strong></span>
+                                <span class="d-block">Điện thoại: <strong>{{ $value->dienthoai }}</strong></span>
                                 <span class="d-block">Sản phẩm:</span>
                                 <table class="table table-bordered table-hover table-sm mb-0">
                                     <thead>
                                         <tr>
-                                            <th width="5%">#</th>
-                                            <th>Sản phẩm</th>
-                                            <th width="5%">SL</th>
-                                            <th width="15%">Đơn giá</th>
-                                            <th width="20%">Thành tiền</th>
+                                            <th  class="text-end" width="5%">#</th>
+                                            <th  class="text-end" with="45%">Sản phẩm</th>
+                                            <th  class="text-end" width="5%">SL</th>
+                                            <th  class="text-end" width="15%">Đơn giá</th>
+                                            <th  class="text-end" width="20%">Thành tiền</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @php $tongtien = 0; @endphp
                                         @foreach($value->DonHang_ChiTiet as $chitiet)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $chitiet->SanPham->tensanpham }}</td>
-                                                <td>{{ $chitiet->soluongban }}</td>
+                                                <td class="text-end">{{ $loop->iteration }}</td>
+                                                <td class="text-end">{{ $chitiet->GoiData->tengoicuoc}}</td>
+                                                <td class="text-end">{{ $chitiet->soluongban }}</td>
                                                 <td class="text-end">{{ number_format($chitiet->dongiaban) }}<sup><u>đ</u></sup></td>
                                                 <td class="text-end">{{ number_format($chitiet->soluongban * $chitiet->dongiaban) }}<sup><u>đ</u></sup></td>
                                             </tr>
@@ -59,12 +57,13 @@
                             </td>
                             <td>{{ $value->created_at->format('d/m/Y H:i:s') }}</td>
                             <td>{{ $value->TinhTrang->tinhtrang }}</td>
-                            <td class="text-center"><a href="{{ route('admin.donhang.sua', ['id' => $value->id]) }}"><i class="bi bi-pencil-square"></i></a></td>
-                            <td class="text-center"><a href="{{ route('admin.donhang.xoa', ['id' => $value->id]) }}"><i class="bi bi-trash text-danger"></i></a></td>
+                            <td class="text-center"><a href="{{ route('admin.donhang.sua', ['id' => $value->id]) }}"><i class="bi bi-pencil-square"></i>sửa</a></td>
+                            <td class="text-center"><a href="{{ route('admin.donhang.xoa', ['id' => $value->id]) }}"><i class="bi bi-trash text-danger"></i>xóa</a></td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+      
         </div>
     </div>
 @endsection

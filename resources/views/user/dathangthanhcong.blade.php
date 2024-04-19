@@ -8,7 +8,7 @@
 					<h2 class="h4 pb-3">Cảm ơn bạn đã đặt hàng!</h2>
 					<p class="fs-sm mb-2">Đơn hàng của bạn đã được đặt và sẽ được xử lý trong thời gian sớm nhất.</p>
 					<p class="fs-sm">Bạn sẽ sớm nhận được email xác nhận đơn đặt hàng của bạn.</p>
-					<a class="btn btn-danger mt-3 me-3" href="{{ route('frontend.sanpham') }}">
+					<a class="btn btn-danger mt-3 me-3" href="{{ route('frontend.goidata') }}">
 					<i class="ci-cart me-2"></i>Tiếp tục mua hàng
 					</a>
 				</div>

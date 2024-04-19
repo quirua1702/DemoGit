@@ -3440,19 +3440,19 @@ textarea.form-control-lg {
 
 .btn-primary {
 	--cz-btn-color: #000;
-	--cz-btn-bg: #fe696a;
-	--cz-btn-border-color: #fe696a;
+	--cz-btn-bg: #c10d0d;
+	--cz-btn-border-color: #c10d0d;
 	--cz-btn-hover-color: #000;
-	--cz-btn-hover-bg: #fe8080;
-	--cz-btn-hover-border-color: #fe7879;
+	--cz-btn-hover-bg: #c10d0d;
+	--cz-btn-hover-border-color: #c10d0d;
 	--cz-btn-focus-shadow-rgb: 216, 89, 90;
 	--cz-btn-active-color: #000;
-	--cz-btn-active-bg: #fe8788;
-	--cz-btn-active-border-color: #fe7879;
+	--cz-btn-active-bg: #c10d0d;
+	--cz-btn-active-border-color: #c10d0d;
 	--cz-btn-active-shadow: unset;
 	--cz-btn-disabled-color: #000;
-	--cz-btn-disabled-bg: #fe696a;
-	--cz-btn-disabled-border-color: #fe696a;
+	--cz-btn-disabled-bg: #c10d0d;
+	--cz-btn-disabled-border-color: #c10d0d;
 }
 
 .btn-accent {
@@ -5421,7 +5421,7 @@ textarea.form-control-lg {
 	--cz-badge-padding-y: 0.25em;
 	--cz-badge-font-size: 0.75em;
 	--cz-badge-font-weight: normal;
-	--cz-badge-color: #fff;
+	--cz-badge-color: #ffffff;
 	--cz-badge-border-radius: 0.175rem;
 	display: inline-block;
 	padding: var(--cz-badge-padding-y) var(--cz-badge-padding-x);

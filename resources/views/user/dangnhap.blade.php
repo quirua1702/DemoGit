@@ -75,7 +75,7 @@
 
 						@if (Route::has('password.request'))
 
-							<a class="nav-link-inline fs-sm" href="#">Quên mật khẩu?</a>
+							<a class="nav-link-inline fs-sm" href="{{ route('user.quenmatkhau') }}">Quên mật khẩu?</a>
 						@endif
 						</div>
 

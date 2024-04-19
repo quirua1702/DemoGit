@@ -18,8 +18,9 @@ class DonHangController extends Controller
 
     public function getDanhSach()
     {
+        $tinhtrang = TinhTrang::where('id','id')->get();
         $donhang = DonHang::orderBy('created_at', 'desc')->get();
-        return view('admin.donhang.danhsach', compact('donhang'));
+        return view('admin.donhang.danhsach', compact('donhang','tinhtrang'));
     }
 
     public function getThem()
@@ -43,14 +44,12 @@ class DonHangController extends Controller
     {
         $this->validate($request, [
             'tinhtrang_id' => ['required'],
-            'dienthoaigiaohang' => ['required', 'string', 'max:20'],
-            'diachigiaohang' => ['required', 'string', 'max:191'],
+            'dienthoai' => ['required', 'string', 'max:20'],
         ]);
 
         $orm = DonHang::find($id);
         $orm->tinhtrang_id = $request->tinhtrang_id;
-        $orm->dienthoaigiaohang = $request->dienthoaigiaohang;
-        $orm->diachigiaohang = $request->diachigiaohang;
+        $orm->dienthoai = $request->dienthoai;
         $orm->save();
         
         return redirect()->route('admin.donhang');
@@ -59,7 +58,6 @@ class DonHangController extends Controller
     {
         $orm = DonHang::find($id);
         $orm->delete();
-
         $chitiet = DonHang_ChiTiet::where('donhang_id', $orm->id)->first();
         $chitiet->delete();
 

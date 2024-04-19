@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('baiviet_id')->constrained('baiviet');
             $table->foreignId('nguoidung_id')->constrained('nguoidung');
             $table->text('noidungbinhluan');
-            $table->unsignedTinyInteger('kiemduyet')->default(0);
-            $table->unsignedTinyInteger('kichhoat')->default(1);
+            //$table->unsignedTinyInteger('kiemduyet')->default(0);
+            //$table->unsignedTinyInteger('kichhoat')->default(1);
             $table->timestamps();
             $table->engine = 'InnoDB';
             });
@@ -29,7 +29,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('binhluanbaiviet');
+        Schema::dropIfExists('binhluanbaiviets');
 
     }
 };

@@ -9,7 +9,7 @@ class TinhTrangController extends Controller
 {
          public function getDanhSach()
         {
-                $tinhtrang = TinhTrang::all();
+                $tinhtrang = TinhTrang::orderBY('Created_at','DESC')->search()->paginate(10);
                 return view('admin.tinhtrang.danhsach', compact('tinhtrang'));
         }
         public function getThem()
@@ -46,7 +46,6 @@ class TinhTrangController extends Controller
         public function getXoa($id)
         {
                 $orm = TinhTrang::find($id);
-
                 $orm->delete();
                 return redirect()->route('admin.tinhtrang');
         }
